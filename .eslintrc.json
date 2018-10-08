@@ -1,0 +1,67 @@
+{
+    "root": true,
+    "parser": "babel-eslint",
+    "extends": [
+        "airbnb-base",
+        "prettier"
+    ],
+    "settings": {
+      "import/resolver": {
+          "node": {
+              "extensions": [".js", ".mjs"]
+          }
+      }
+    },
+    "env": {
+      "node": true
+    },
+    "plugins": [
+        "import",
+        "prettier"
+    ],
+    "rules": {
+        "no-console": "warn",
+        "no-param-reassign": ["error", {
+            "props": false
+        }],
+        "no-underscore-dangle": ["warn", {
+            "allow": ["_id", "_rev", "_path", "_cryptoSuite", "_stateStore", "_keyStorePath", "_peers", "_userContext"]
+        }],
+        "no-unused-vars": ["warn", {
+            "vars": "local",
+            "args": "none"
+        }],
+        "no-unused-expressions": ["error", {
+            "allowTernary": true
+        }],
+        "no-plusplus": ["error", {
+            "allowForLoopAfterthoughts": true
+        }],
+        "no-duplicate-imports": "off",
+        "handle-callback-err": "error",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                "devDependencies": ["lib/**/*.spec.js", "test/**/*.js"]
+            }
+        ],
+        "prettier/prettier": [
+            "error", {
+                "tabWidth": 4,
+                "semi": false
+            }
+        ],
+        "import/extensions": ["error", "never"]
+    },
+    "overrides": [{
+        "files": ["lib/**/*.spec.js", "test/**/*.js"],
+        "rules": {
+            "func-names": "off",
+            "no-unused-expressions": "off",
+            "prefer-arrow-callback": "off"
+        },
+        "env": {
+            "mocha": true
+        }
+    }]
+}
