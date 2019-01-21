@@ -1,6 +1,6 @@
 {
     "name": "fabric-network-bootstrap",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "description": "Library to bootstrap a Hyperledger Fabric Network",
     "main": "lib/index.js",
     "author": "Dain Liffman",
